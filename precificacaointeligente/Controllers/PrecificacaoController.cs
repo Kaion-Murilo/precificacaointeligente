@@ -12,7 +12,7 @@ namespace precificacaointeligente.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index(PrecificacaoModel model)
+        public IActionResult Index(Precificacao model)
         {
             if (ModelState.IsValid)
             {
