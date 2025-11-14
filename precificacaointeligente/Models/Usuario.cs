@@ -1,11 +1,18 @@
-﻿namespace precificacaointeligente.Models
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+
+namespace precificacaointeligente.Models
 {
     public class Usuario
     {
-        public int IdUsuario { get; set; }
+        [Key]  // ← ESSENCIAL
+        public int Id { get; set; }
+
+
         public string Nome { get; set; }
         public string Email { get; set; }
-        public string SenhaHash { get; set; }
+        public string Senha { get; set; }
         public string Cargo { get; set; }
         public DateTime DataCadastro { get; set; }
 

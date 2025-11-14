@@ -1,8 +1,13 @@
-﻿namespace precificacaointeligente.Models
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+
+namespace precificacaointeligente.Models
 {
     public class Venda
     {
+        [Key]  // ← ESSENCIAL
         public int IdVenda { get; set; }
+
         public int IdProduto { get; set; }
         public int Quantidade { get; set; }
         public decimal PrecoUnitario { get; set; }
