@@ -7,22 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Data\Teste.db" />
-    <None Remove="Data\Teste.db-shm" />
-    <None Remove="Data\Teste.db-wal" />
     <None Remove="Teste.db" />
     <None Remove="Teste1.db" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.Data.Sqlite" Version="8.0.0" />
-    <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="8.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.0">
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
   </ItemGroup>
 
 </Project>

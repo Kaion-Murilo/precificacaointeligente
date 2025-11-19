@@ -1,0 +1,212 @@
+﻿@model precificacaointeligente.Models.ProductComparisonModel
+@{
+    ViewData["Title"] = "Comparação com Regra de Cramer - Passo a Passo";
+}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+<style>
+    body {
+        background: linear-gradient(135deg,#f4f6f8,#e5eaf4);
+        font-family: 'Segoe UI', sans-serif;
+        color: #2d2d2d;
+    }
+
+    .card-main {
+        border-radius: 12px;
+        padding: 20px;
+        background: white;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    }
+
+    .diag-principal {
+        color: #0d6efd;
+        font-weight: 700;
+    }
+
+    .diag-secundaria {
+        color: #dc3545;
+        font-weight: 700;
+    }
+
+    pre.math {
+        background: #fbfdff;
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #eef6ff;
+    }
+
+    code.smallcode {
+        background: #f7f9fc;
+        padding: 6px 8px;
+        border-radius: 6px;
+        display: inline-block;
+    }
+</style>
+
+<div class="container my-5">
+    <div class="card-main mx-auto" style="max-width:1000px;">
+        <h2 class="mb-0">🔍 Comparação de Produtos — <span class="diag-principal">Regra de Cramer</span></h2>
+        <p class="text-muted mb-3">Passo-a-passo completo: montagem da matriz, diagonais (principal e secundária), substituição de colunas para formar Dx e DL, e aplicação final da fórmula.</p>
+
+        <form asp-action="Index" method="post" novalidate>
+            <div asp-validation-summary="All" class="text-danger mb-2"></div>
+
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <h5>📦 Produto A</h5>
+                    <label class="form-label">Preço de Venda (R$)</label>
+                    <input asp-for="PriceA" class="form-control" />
+                    <label class="form-label mt-2">Custo Variável (R$)</label>
+                    <input asp-for="VariableCostA" class="form-control" />
+                    <label class="form-label mt-2">Custo Fixo (R$)</label>
+                    <input asp-for="FixedCostA" class="form-control" />
+                </div>
+
+                <div class="col-md-6">
+                    <h5>📦 Produto B</h5>
+                    <label class="form-label">Preço de Venda (R$)</label>
+                    <input asp-for="PriceB" class="form-control" />
+                    <label class="form-label mt-2">Custo Variável (R$)</label>
+                    <input asp-for="VariableCostB" class="form-control" />
+                    <label class="form-label mt-2">Custo Fixo (R$)</label>
+                    <input asp-for="FixedCostB" class="form-control" />
+                </div>
+            </div>
+
+            <div class="mt-4 text-end">
+                <button class="btn btn-primary">🔧 Calcular com Regra de Cramer</button>
+            </div>
+        </form>
+
+        @if (ViewBag.Error != null)
+        {
+            <div class="alert alert-warning mt-4">@ViewBag.Error</div>
+        }
+
+        @if (Model.QuantityBreakEven != null)
+        {
+            <hr class="my-4" />
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <div class="card p-3">
+                        <h6>📊 Quantidade de Empate (Q)</h6>
+                        <h3 class="text-primary mb-0">@Model.QuantityBreakEven unidades</h3>
+                        <small class="text-muted">(arredondado)</small>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <div class="card p-3">
+                        <h6>💰 Lucro no ponto de empate (L)</h6>
+                        <h3 class="text-success mb-0">R$ @Model.ProfitAtBreakEven</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card p-3 mt-3">
+                <h4>🧮 Passo a passo detalhado</h4>
+
+                <p><strong>1) Equações de partida (lucro de cada produto)</strong></p>
+                <pre class="math">
+    Lucro_A = (PriceA - VariableCostA) · Q − FixedCostA
+    Lucro_B = (PriceB - VariableCostB) · Q − FixedCostB
+
+    Queremos Q e L tal que:
+    (A1)·Q + (-1)·L = C1
+    (A2)·Q + (-1)·L = C2
+    onde:
+    A1 = PriceA - VariableCostA
+    A2 = PriceB - VariableCostB
+    C1 = FixedCostA
+    C2 = FixedCostB
+                    </pre>
+
+                <p><strong>2) Montar a matriz dos coeficientes</strong></p>
+                <p>Matriz 2×2 (coeficientes das incógnitas Q e L):</p>
+
+                <pre class="math">
+    | <span class="diag-principal">@Model.A1</span>    <span class="diag-secundaria">-1</span> |
+    | <span class="diag-principal">@Model.A2</span>    <span class="diag-secundaria">-1</span> |
+                    </pre>
+
+                <p><strong>3) Determinante principal D (usando diagonais)</strong></p>
+                <p>Regra para 2×2: se matriz = <code>| a  b |</code> / <code>| c  d |</code>, então D = a·d − b·c.</p>
+
+                <p>No nosso caso:</p>
+                <pre class="math">
+    a = A1          (posição [1,1])
+    b = -1          (posição [1,2])
+    c = A2          (posição [2,1])
+    d = -1          (posição [2,2])
+
+    D = a·d − b·c = (A1 × -1) − (-1 × A2) = @Model.D
+                    </pre>
+
+                <p><strong>Interpretação:</strong> se <code>D = 0</code> então as equações são dependentes (mesma reta) e não existe solução única. O sistema pode ter infinitas soluções ou nenhuma; a Regra de Cramer exige D ≠ 0.</p>
+
+                <hr />
+
+                <p><strong>4) Determinante Dx — substituir a coluna de Q pelos termos independentes (C1,C2)</strong></p>
+                <p>Formamos Dx substituindo a primeira coluna (coeficientes de Q) pela coluna dos termos independentes:</p>
+
+                <pre class="math">
+    Matriz Dx:
+    | C1    -1 |
+    | C2    -1 |
+
+    Dx = (C1 × -1) − (-1 × C2) = @Model.Dx
+                    </pre>
+
+                <p><strong>5) Determinante DL — substituir a coluna de L pelos termos independentes</strong></p>
+                <pre class="math">
+    Matriz DL:
+    | A1    C1 |
+    | A2    C2 |
+
+    DL = (A1 × C2) − (C1 × A2) = @Model.Dl
+                    </pre>
+
+                <hr />
+
+                <p><strong>6) Soluções finais (Regra de Cramer)</strong></p>
+                <pre class="math">
+    Q = Dx / D = @Model.Dx / @Model.D = @Model.QuantityBreakEven
+    L = DL / D = @Model.Dl / @Model.D = @Model.ProfitAtBreakEven
+                    </pre>
+
+                <hr />
+
+                <h5>🔎 Exemplo numérico (teste)</h5>
+                <p>Insira estes valores no formulário para ver na prática:</p>
+                <ul>
+                    <li>Produto A: PriceA = <b>80</b>, VariableCostA = <b>30</b>, FixedCostA = <b>20</b></li>
+                    <li>Produto B: PriceB = <b>100</b>, VariableCostB = <b>20</b>, FixedCostB = <b>40</b></li>
+                </ul>
+
+                <pre class="math">
+    A1 = 80 − 30 = 50
+    A2 = 100 − 20 = 80
+    C1 = 20
+    C2 = 40
+
+    Matriz:
+    | 50   -1 |
+    | 80   -1 |
+
+    D  = (50×-1) − (-1×80) = -50 + 80 = 30
+    Dx = (20×-1) − (-1×40) = -20 + 40 = 20
+    DL = (50×40) − (20×80) = 2000 − 1600 = 400
+
+    Q = Dx/D = 20/30 ≈ 0.6667 → 0.6667 unidades
+    L = DL/D = 400/30 ≈ 13.3333 → R$ 13.3333
+                    </pre>
+
+                <div class="alert alert-info">
+                    <strong>Observação:</strong> se A1 == A2 (mesma margem por unidade), o determinante D será 0. Nesse caso mostramos uma mensagem e não aplicamos a Regra de Cramer.
+                </div>
+            </div>
+        }
+    </div>
+</div>

@@ -12,10 +12,6 @@ namespace precificacaointeligente.Controllers
         }
 
         // GET: HomeController/Details/5
-        public ActionResult Telainicial()
-        {
-            return View();
-        }
         public ActionResult Details(int id)
         {
             return View();

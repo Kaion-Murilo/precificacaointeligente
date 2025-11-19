@@ -1,4 +1,4 @@
-﻿@model precificacaointeligente.Models.Precificacao
+﻿@model precificacaointeligente.Models.PrecificacaoModel
 @{
     ViewData["Title"] = "Sistema de Precificação Inteligente";
 }
@@ -7,11 +7,12 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <style>
-    /* ======= ESTILO GLOBAL ======= */
     body {
-        background: linear-gradient(135deg, #e8f1f2, #d9ecff);
+        background: linear-gradient(135deg, #f4f6f8, #e5eaf4);
         font-family: 'Segoe UI', sans-serif;
         color: #2d2d2d;
+    }
+
     }
 
     h1, h4 {
@@ -20,7 +21,7 @@
 
     /* ======= CARD PRINCIPAL ======= */
     .main-card {
-        background: white;
+   
         border-radius: 18px;
         box-shadow: 0 6px 25px rgba(0,0,0,0.1);
         padding: 2.5rem;
@@ -344,5 +345,11 @@
                 });
             </script>
         </div>
+        <div class="text-start mb-3">
+            <a asp-action="GerarPDF" class="btn btn-outline-primary shadow-sm">
+                📄 Gerar PDF (Método de Cramer)
+            </a>
+        </div>
+
     }
 </div>
