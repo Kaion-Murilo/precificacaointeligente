@@ -1,212 +1,348 @@
-﻿@model precificacaointeligente.Models.ProductComparisonModel
+﻿@model precificacaointeligente.Models.CramerModel
+
 @{
-    ViewData["Title"] = "Comparação com Regra de Cramer - Passo a Passo";
+    ViewData["Title"] = "Cálculo por Cramer – Comparação de Produtos";
 }
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-
 <style>
     body {
-        background: linear-gradient(135deg,#f4f6f8,#e5eaf4);
+        background: linear-gradient(135deg, #f4f6f8, #e5eaf4);
         font-family: 'Segoe UI', sans-serif;
         color: #2d2d2d;
     }
 
-    .card-main {
-        border-radius: 12px;
-        padding: 20px;
-        background: white;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    h1, h4 {
+        font-weight: 700;
     }
 
-    .diag-principal {
+    /* ======= CARD PRINCIPAL ======= */
+    .main-card {
+        border-radius: 18px;
+        box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+        padding: 2.5rem;
+        transition: all 0.3s ease;
+        background: white;
+    }
+
+        .main-card:hover {
+            transform: scale(1.01);
+        }
+
+    /* ======= FORMULÁRIO ======= */
+    label {
+        color: #0d6efd;
+        font-weight: 600;
+    }
+
+    .form-control {
+        border-radius: 10px;
+        padding: 0.75rem;
+        border: 1.5px solid #cbd3da;
+        transition: 0.3s;
+    }
+
+        .form-control:focus {
+            border-color: #0d6efd;
+            box-shadow: 0 0 0 0.15rem rgba(13,110,253,.25);
+        }
+
+    .input-percent {
+        position: relative;
+    }
+
+        .input-percent input {
+            padding-right: 2rem;
+        }
+
+        .input-percent span {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #6c757d;
+            font-weight: 600;
+        }
+
+    /* ======= BOTÃO ======= */
+    .btn-gradient {
+        background: linear-gradient(135deg, #0d6efd, #00bfa6);
+        border: none;
+        color: white;
+        font-weight: 600;
+        font-size: 1.1rem;
+        padding: 0.9rem;
+        border-radius: 12px;
+        transition: 0.3s;
+    }
+
+        .btn-gradient:hover {
+            opacity: 0.9;
+            transform: scale(1.02);
+        }
+
+    /* ======= RESULTADOS ======= */
+    .results-section h4 {
         color: #0d6efd;
         font-weight: 700;
     }
 
-    .diag-secundaria {
-        color: #dc3545;
+    .result-card {
+        border-radius: 14px;
+        transition: transform 0.3s;
+        background: white;
+        padding: 1.5rem;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+        text-align: center;
+    }
+
+        .result-card:hover {
+            transform: translateY(-5px);
+        }
+
+    .result-value {
+        font-size: 2rem;
         font-weight: 700;
+        color: #0d6efd;
     }
 
-    pre.math {
-        background: #fbfdff;
-        padding: 12px;
-        border-radius: 8px;
-        border: 1px solid #eef6ff;
+    /* ======= CANVAS ======= */
+    canvas {
+        background: white;
+        border-radius: 14px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
-    code.smallcode {
-        background: #f7f9fc;
-        padding: 6px 8px;
-        border-radius: 6px;
+    /* ======= SEÇÃO DE CÁLCULOS ======= */
+    .calc-steps {
+        background: #f8fafc;
+        border-left: 5px solid #0d6efd;
+        border-radius: 10px;
+        padding: 1.5rem;
+        margin-top: 2.5rem;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    }
+
+        .calc-steps h5 {
+            color: #0d6efd;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .calc-steps code {
+            background: #eef3ff;
+            color: #333;
+            padding: 0.35rem 0.65rem;
+            border-radius: 6px;
+            display: inline-block;
+            margin: 0.25rem 0;
+            font-family: "Consolas", monospace;
+            font-size: 0.95rem;
+        }
+
+    /* ======= MATRIZES (NOVO E PREMIUM) ======= */
+    .matrix-box {
         display: inline-block;
+        background: white;
+        padding: 18px;
+        border-radius: 12px;
+        border: 1.5px solid #d6ddeb;
+        box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+        margin: 10px 0;
+        font-family: "Consolas", monospace;
+        font-size: 1rem;
+        color: #2d2d2d;
+    }
+
+    .matrix-row {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        padding: 4px 0;
+    }
+
+    .matrix-title {
+        font-weight: 700;
+        color: #0d6efd;
+        margin-bottom: 0.3rem;
+    }
+
+    /* ======= BLOCOS DE FÓRMULAS ======= */
+    .formula-block {
+        background: #ffffff;
+        border-radius: 10px;
+        padding: 1.2rem;
+        border: 1px solid #dbe3f2;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        font-family: "Consolas", monospace;
+        white-space: pre-wrap;
+        margin: 1rem 0;
+        color: #333;
+    }
+
+    .formula-title {
+        color: #0d6efd;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
     }
 </style>
 
-<div class="container my-5">
-    <div class="card-main mx-auto" style="max-width:1000px;">
-        <h2 class="mb-0">🔍 Comparação de Produtos — <span class="diag-principal">Regra de Cramer</span></h2>
-        <p class="text-muted mb-3">Passo-a-passo completo: montagem da matriz, diagonais (principal e secundária), substituição de colunas para formar Dx e DL, e aplicação final da fórmula.</p>
 
-        <form asp-action="Index" method="post" novalidate>
-            <div asp-validation-summary="All" class="text-danger mb-2"></div>
+<h2 class="mb-4">Comparação de Produtos (Regra de Cramer)</h2>
 
-            <div class="row g-3">
-                <div class="col-md-6">
-                    <h5>📦 Produto A</h5>
-                    <label class="form-label">Preço de Venda (R$)</label>
-                    <input asp-for="PriceA" class="form-control" />
-                    <label class="form-label mt-2">Custo Variável (R$)</label>
-                    <input asp-for="VariableCostA" class="form-control" />
-                    <label class="form-label mt-2">Custo Fixo (R$)</label>
-                    <input asp-for="FixedCostA" class="form-control" />
-                </div>
+<form method="post">
 
-                <div class="col-md-6">
-                    <h5>📦 Produto B</h5>
-                    <label class="form-label">Preço de Venda (R$)</label>
-                    <input asp-for="PriceB" class="form-control" />
-                    <label class="form-label mt-2">Custo Variável (R$)</label>
-                    <input asp-for="VariableCostB" class="form-control" />
-                    <label class="form-label mt-2">Custo Fixo (R$)</label>
-                    <input asp-for="FixedCostB" class="form-control" />
-                </div>
+    <h4>Produto A</h4>
+    <div class="row mb-3">
+        <div class="col-md-4">
+            <label>Preço (PriceA)</label>
+            <input asp-for="PriceA" class="form-control" placeholder="Ex: 80" />
+        </div>
+        <div class="col-md-4">
+            <label>Custo Variável (VariableCostA)</label>
+            <input asp-for="VariableCostA" class="form-control" placeholder="Ex: 30" />
+        </div>
+        <div class="col-md-4">
+            <label>Custo Fixo (FixedCostA)</label>
+            <input asp-for="FixedCostA" class="form-control" placeholder="Ex: 20" />
+        </div>
+    </div>
+
+    <h4>Produto B</h4>
+    <div class="row mb-3">
+        <div class="col-md-4">
+            <label>Preço (PriceB)</label>
+            <input asp-for="PriceB" class="form-control" placeholder="Ex: 100" />
+        </div>
+        <div class="col-md-4">
+            <label>Custo Variável (VariableCostB)</label>
+            <input asp-for="VariableCostB" class="form-control" placeholder="Ex: 20" />
+        </div>
+        <div class="col-md-4">
+            <label>Custo Fixo (FixedCostB)</label>
+            <input asp-for="FixedCostB" class="form-control" placeholder="Ex: 40" />
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Calcular</button>
+
+</form>
+
+
+@if (Model.HasResult)
+{
+    <hr class="my-4" />
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <div class="card p-3 shadow-sm">
+                <h6>📊 Quantidade de Empate (Q)</h6>
+                <h3 class="text-primary mb-0">@Math.Round(Model.Q) unidades</h3>
+                <small class="text-muted">(arredondado)</small>
             </div>
+        </div>
 
-            <div class="mt-4 text-end">
-                <button class="btn btn-primary">🔧 Calcular com Regra de Cramer</button>
+        <div class="col-md-6 mb-3">
+            <div class="card p-3 shadow-sm">
+                <h6>💰 Lucro no ponto de empate (L)</h6>
+                <h3 class="text-success mb-0">R$ @Model.L.ToString("N2")</h3>
+                <small class="text-muted">(arredondado)</small>
             </div>
-        </form>
+        </div>
+    </div>
 
-        @if (ViewBag.Error != null)
-        {
-            <div class="alert alert-warning mt-4">@ViewBag.Error</div>
-        }
+    <h2>🧮 Passo a passo detalhado</h2>
 
-        @if (Model.QuantityBreakEven != null)
-        {
-            <hr class="my-4" />
 
-            <div class="row">
-                <div class="col-md-6 mb-3">
-                    <div class="card p-3">
-                        <h6>📊 Quantidade de Empate (Q)</h6>
-                        <h3 class="text-primary mb-0">@Model.QuantityBreakEven unidades</h3>
-                        <small class="text-muted">(arredondado)</small>
-                    </div>
-                </div>
+    <!-- ================= PASSO 1 ================= -->
+    <h3>1) Equações de partida</h3>
 
-                <div class="col-md-6 mb-3">
-                    <div class="card p-3">
-                        <h6>💰 Lucro no ponto de empate (L)</h6>
-                        <h3 class="text-success mb-0">R$ @Model.ProfitAtBreakEven</h3>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card p-3 mt-3">
-                <h4>🧮 Passo a passo detalhado</h4>
-
-                <p><strong>1) Equações de partida (lucro de cada produto)</strong></p>
-                <pre class="math">
+    <pre>
     Lucro_A = (PriceA - VariableCostA) · Q − FixedCostA
     Lucro_B = (PriceB - VariableCostB) · Q − FixedCostB
 
-    Queremos Q e L tal que:
-    (A1)·Q + (-1)·L = C1
-    (A2)·Q + (-1)·L = C2
-    onde:
-    A1 = PriceA - VariableCostA
-    A2 = PriceB - VariableCostB
-    C1 = FixedCostA
-    C2 = FixedCostB
-                    </pre>
+    A1 = PriceA - VariableCostA = @Model.A1
+    A2 = PriceB - VariableCostB = @Model.A2
+    C1 = FixedCostA = @Model.C1
+    C2 = FixedCostB = @Model.C2
+        </pre>
 
-                <p><strong>2) Montar a matriz dos coeficientes</strong></p>
-                <p>Matriz 2×2 (coeficientes das incógnitas Q e L):</p>
 
-                <pre class="math">
-    | <span class="diag-principal">@Model.A1</span>    <span class="diag-secundaria">-1</span> |
-    | <span class="diag-principal">@Model.A2</span>    <span class="diag-secundaria">-1</span> |
-                    </pre>
+    <!-- ================= PASSO 2 ================= -->
+    <h3>2) Montar a matriz dos coeficientes</h3>
 
-                <p><strong>3) Determinante principal D (usando diagonais)</strong></p>
-                <p>Regra para 2×2: se matriz = <code>| a  b |</code> / <code>| c  d |</code>, então D = a·d − b·c.</p>
+    <pre>
+    Matriz simbólica:
+    | A1    -1 |
+    | A2    -1 |
 
-                <p>No nosso caso:</p>
-                <pre class="math">
-    a = A1          (posição [1,1])
-    b = -1          (posição [1,2])
-    c = A2          (posição [2,1])
-    d = -1          (posição [2,2])
+    Matriz substituída:
+    | @Model.A1    -1 |
+    | @Model.A2    -1 |
+        </pre>
 
-    D = a·d − b·c = (A1 × -1) − (-1 × A2) = @Model.D
-                    </pre>
 
-                <p><strong>Interpretação:</strong> se <code>D = 0</code> então as equações são dependentes (mesma reta) e não existe solução única. O sistema pode ter infinitas soluções ou nenhuma; a Regra de Cramer exige D ≠ 0.</p>
+    <!-- ================= PASSO 3 ================= -->
+    <h3>3) Determinante principal D</h3>
 
-                <hr />
+    <pre>
+    D = A1·(-1) − (-1)·A2
 
-                <p><strong>4) Determinante Dx — substituir a coluna de Q pelos termos independentes (C1,C2)</strong></p>
-                <p>Formamos Dx substituindo a primeira coluna (coeficientes de Q) pela coluna dos termos independentes:</p>
+    Substituindo:
+    D = (@Model.A1 × -1) − (-1 × @Model.A2)
+    D = @Model.D
+        </pre>
 
-                <pre class="math">
-    Matriz Dx:
-    | C1    -1 |
-    | C2    -1 |
 
-    Dx = (C1 × -1) − (-1 × C2) = @Model.Dx
-                    </pre>
+    @if (Model.DeterminantZero)
+    {
+        <div class="alert alert-danger">
+            <strong>D = 0.</strong> O sistema não possui solução única. A Regra de Cramer não pode ser aplicada.
+        </div>
+    }
+    else
+    {
 
-                <p><strong>5) Determinante DL — substituir a coluna de L pelos termos independentes</strong></p>
-                <pre class="math">
-    Matriz DL:
-    | A1    C1 |
-    | A2    C2 |
+        <!-- ================= PASSO 4 ================= -->
+        <h3>4) Determinante Dx</h3>
 
-    DL = (A1 × C2) − (C1 × A2) = @Model.Dl
-                    </pre>
+        <pre>
+        Matriz Dx simbólica:
+        | C1    -1 |
+        | C2    -1 |
 
-                <hr />
+        Matriz Dx substituída:
+        | @Model.C1    -1 |
+        | @Model.C2    -1 |
 
-                <p><strong>6) Soluções finais (Regra de Cramer)</strong></p>
-                <pre class="math">
-    Q = Dx / D = @Model.Dx / @Model.D = @Model.QuantityBreakEven
-    L = DL / D = @Model.Dl / @Model.D = @Model.ProfitAtBreakEven
-                    </pre>
+        Dx = (C1 × -1) − (-1 × C2)
+        Dx = (@Model.C1 × -1) − (-1 × @Model.C2)
+        Dx = @Model.Dx
+                </pre>
 
-                <hr />
 
-                <h5>🔎 Exemplo numérico (teste)</h5>
-                <p>Insira estes valores no formulário para ver na prática:</p>
-                <ul>
-                    <li>Produto A: PriceA = <b>80</b>, VariableCostA = <b>30</b>, FixedCostA = <b>20</b></li>
-                    <li>Produto B: PriceB = <b>100</b>, VariableCostB = <b>20</b>, FixedCostB = <b>40</b></li>
-                </ul>
+        <!-- ================= PASSO 5 ================= -->
+        <h3>5) Determinante DL</h3>
 
-                <pre class="math">
-    A1 = 80 − 30 = 50
-    A2 = 100 − 20 = 80
-    C1 = 20
-    C2 = 40
+        <pre>
+        Matriz DL simbólica:
+        | A1    C1 |
+        | A2    C2 |
 
-    Matriz:
-    | 50   -1 |
-    | 80   -1 |
+        Matriz DL substituída:
+        | @Model.A1    @Model.C1 |
+        | @Model.A2    @Model.C2 |
 
-    D  = (50×-1) − (-1×80) = -50 + 80 = 30
-    Dx = (20×-1) − (-1×40) = -20 + 40 = 20
-    DL = (50×40) − (20×80) = 2000 − 1600 = 400
+        DL = (A1 × C2) − (C1 × A2)
+        DL = (@Model.A1 × @Model.C2) − (@Model.C1 × @Model.A2)
+        DL = @Model.Dl
+                </pre>
 
-    Q = Dx/D = 20/30 ≈ 0.6667 → 0.6667 unidades
-    L = DL/D = 400/30 ≈ 13.3333 → R$ 13.3333
-                    </pre>
 
-                <div class="alert alert-info">
-                    <strong>Observação:</strong> se A1 == A2 (mesma margem por unidade), o determinante D será 0. Nesse caso mostramos uma mensagem e não aplicamos a Regra de Cramer.
-                </div>
-            </div>
-        }
-    </div>
-</div>
+        <!-- ================= PASSO 6 ================= -->
+        <h3>6) Soluções finais</h3>
+
+        <pre>
+        Q = Dx / D = @Model.Dx / @Model.D = @Model.Q
+        L = DL / D = @Model.Dl / @Model.D = @Model.L
+                </pre>
+    }
+}

@@ -7,20 +7,32 @@
       "RelativeMoniker": "D:0:0:{934DCB7A-25D6-4642-8867-81307E6496B7}|precificacaointeligente\\precificacaointeligente.csproj|solutionrelative:precificacaointeligente\\views\\cramer\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{934DCB7A-25D6-4642-8867-81307E6496B7}|precificacaointeligente\\precificacaointeligente.csproj|c:\\users\\user\\onedrive\\documentos\\github\\precificacaointeligente\\precificacaointeligente\\views\\precificacao\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{934DCB7A-25D6-4642-8867-81307E6496B7}|precificacaointeligente\\precificacaointeligente.csproj|solutionrelative:precificacaointeligente\\views\\precificacao\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{934DCB7A-25D6-4642-8867-81307E6496B7}|precificacaointeligente\\precificacaointeligente.csproj|c:\\users\\user\\onedrive\\documentos\\github\\precificacaointeligente\\precificacaointeligente\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{934DCB7A-25D6-4642-8867-81307E6496B7}|precificacaointeligente\\precificacaointeligente.csproj|solutionrelative:precificacaointeligente\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{934DCB7A-25D6-4642-8867-81307E6496B7}|precificacaointeligente\\precificacaointeligente.csproj|c:\\users\\user\\onedrive\\documentos\\github\\precificacaointeligente\\precificacaointeligente\\controllers\\cramercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{934DCB7A-25D6-4642-8867-81307E6496B7}|precificacaointeligente\\precificacaointeligente.csproj|solutionrelative:precificacaointeligente\\controllers\\cramercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{934DCB7A-25D6-4642-8867-81307E6496B7}|precificacaointeligente\\precificacaointeligente.csproj|c:\\users\\user\\onedrive\\documentos\\github\\precificacaointeligente\\precificacaointeligente\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{934DCB7A-25D6-4642-8867-81307E6496B7}|precificacaointeligente\\precificacaointeligente.csproj|solutionrelative:precificacaointeligente\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{934DCB7A-25D6-4642-8867-81307E6496B7}|precificacaointeligente\\precificacaointeligente.csproj|c:\\users\\user\\onedrive\\documentos\\github\\precificacaointeligente\\precificacaointeligente\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{934DCB7A-25D6-4642-8867-81307E6496B7}|precificacaointeligente\\precificacaointeligente.csproj|solutionrelative:precificacaointeligente\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{934DCB7A-25D6-4642-8867-81307E6496B7}|precificacaointeligente\\precificacaointeligente.csproj|c:\\users\\user\\onedrive\\documentos\\github\\precificacaointeligente\\precificacaointeligente\\models\\productcomparisonmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{934DCB7A-25D6-4642-8867-81307E6496B7}|precificacaointeligente\\precificacaointeligente.csproj|solutionrelative:precificacaointeligente\\models\\productcomparisonmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{934DCB7A-25D6-4642-8867-81307E6496B7}|precificacaointeligente\\precificacaointeligente.csproj|c:\\users\\user\\onedrive\\documentos\\github\\precificacaointeligente\\precificacaointeligente\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{934DCB7A-25D6-4642-8867-81307E6496B7}|precificacaointeligente\\precificacaointeligente.csproj|solutionrelative:precificacaointeligente\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{934DCB7A-25D6-4642-8867-81307E6496B7}|precificacaointeligente\\precificacaointeligente.csproj|c:\\users\\user\\onedrive\\documentos\\github\\precificacaointeligente\\precificacaointeligente\\models\\precificacaomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{934DCB7A-25D6-4642-8867-81307E6496B7}|precificacaointeligente\\precificacaointeligente.csproj|solutionrelative:precificacaointeligente\\models\\precificacaomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{934DCB7A-25D6-4642-8867-81307E6496B7}|precificacaointeligente\\precificacaointeligente.csproj|c:\\users\\user\\onedrive\\documentos\\github\\precificacaointeligente\\precificacaointeligente\\controllers\\precificacaocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -33,14 +45,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{934DCB7A-25D6-4642-8867-81307E6496B7}|precificacaointeligente\\precificacaointeligente.csproj|c:\\users\\user\\onedrive\\documentos\\github\\precificacaointeligente\\precificacaointeligente\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{934DCB7A-25D6-4642-8867-81307E6496B7}|precificacaointeligente\\precificacaointeligente.csproj|solutionrelative:precificacaointeligente\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{934DCB7A-25D6-4642-8867-81307E6496B7}|precificacaointeligente\\precificacaointeligente.csproj|c:\\users\\user\\onedrive\\documentos\\github\\precificacaointeligente\\precificacaointeligente\\models\\precificacaomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{934DCB7A-25D6-4642-8867-81307E6496B7}|precificacaointeligente\\precificacaointeligente.csproj|solutionrelative:precificacaointeligente\\models\\precificacaomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{934DCB7A-25D6-4642-8867-81307E6496B7}|precificacaointeligente\\precificacaointeligente.csproj|c:\\users\\user\\onedrive\\documentos\\github\\precificacaointeligente\\precificacaointeligente\\views\\precificacao\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{934DCB7A-25D6-4642-8867-81307E6496B7}|precificacaointeligente\\precificacaointeligente.csproj|solutionrelative:precificacaointeligente\\views\\precificacao\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{934DCB7A-25D6-4642-8867-81307E6496B7}|precificacaointeligente\\precificacaointeligente.csproj|c:\\users\\user\\onedrive\\documentos\\github\\precificacaointeligente\\precificacaointeligente\\precificacaointeligente.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -62,7 +66,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 22,
+          "SelectedChildIndex": 23,
           "Children": [
             {
               "$type": "Bookmark",
@@ -122,19 +126,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Documentos\\github\\precificacaointeligente\\precificacaointeligente\\Views\\Precificacao\\Index.cshtml",
+              "RelativeDocumentMoniker": "precificacaointeligente\\Views\\Precificacao\\Index.cshtml",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\Documentos\\github\\precificacaointeligente\\precificacaointeligente\\Views\\Precificacao\\Index.cshtml",
+              "RelativeToolTip": "precificacaointeligente\\Views\\Precificacao\\Index.cshtml",
+              "ViewState": "AgIAAC0BAAAAAAAAAAAswF0BAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-28T02:12:41.679Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CramerController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Documentos\\github\\precificacaointeligente\\precificacaointeligente\\Controllers\\CramerController.cs",
+              "RelativeDocumentMoniker": "precificacaointeligente\\Controllers\\CramerController.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\Documentos\\github\\precificacaointeligente\\precificacaointeligente\\Controllers\\CramerController.cs",
+              "RelativeToolTip": "precificacaointeligente\\Controllers\\CramerController.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAowDMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T23:56:21.988Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Documentos\\github\\precificacaointeligente\\precificacaointeligente\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "precificacaointeligente\\Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\User\\OneDrive\\Documentos\\github\\precificacaointeligente\\precificacaointeligente\\Controllers\\HomeController.cs",
               "RelativeToolTip": "precificacaointeligente\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T22:08:02.269Z"
+              "WhenOpened": "2025-11-27T22:08:02.269Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "PrecificacaoController.cs",
               "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Documentos\\github\\precificacaointeligente\\precificacaointeligente\\Controllers\\PrecificacaoController.cs",
               "RelativeDocumentMoniker": "precificacaointeligente\\Controllers\\PrecificacaoController.cs",
@@ -146,7 +177,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Documentos\\github\\precificacaointeligente\\precificacaointeligente\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "precificacaointeligente\\Views\\_ViewStart.cshtml",
@@ -158,7 +189,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Documentos\\github\\precificacaointeligente\\precificacaointeligente\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "precificacaointeligente\\Views\\Home\\Index.cshtml",
@@ -166,23 +197,25 @@
               "RelativeToolTip": "precificacaointeligente\\Views\\Home\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-27T21:46:16.711Z"
+              "WhenOpened": "2025-11-27T21:46:16.711Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "ProductComparisonModel.cs",
               "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Documentos\\github\\precificacaointeligente\\precificacaointeligente\\Models\\ProductComparisonModel.cs",
               "RelativeDocumentMoniker": "precificacaointeligente\\Models\\ProductComparisonModel.cs",
               "ToolTip": "C:\\Users\\User\\OneDrive\\Documentos\\github\\precificacaointeligente\\precificacaointeligente\\Models\\ProductComparisonModel.cs",
               "RelativeToolTip": "precificacaointeligente\\Models\\ProductComparisonModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T21:39:26.875Z"
+              "WhenOpened": "2025-11-27T21:39:26.875Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "PrecificacaoModel.cs",
               "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Documentos\\github\\precificacaointeligente\\precificacaointeligente\\Models\\PrecificacaoModel.cs",
               "RelativeDocumentMoniker": "precificacaointeligente\\Models\\PrecificacaoModel.cs",
@@ -190,31 +223,21 @@
               "RelativeToolTip": "precificacaointeligente\\Models\\PrecificacaoModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T21:39:19.117Z"
+              "WhenOpened": "2025-11-27T21:39:19.117Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Documentos\\github\\precificacaointeligente\\precificacaointeligente\\Views\\Precificacao\\Index.cshtml",
-              "RelativeDocumentMoniker": "precificacaointeligente\\Views\\Precificacao\\Index.cshtml",
-              "ToolTip": "C:\\Users\\User\\OneDrive\\Documentos\\github\\precificacaointeligente\\precificacaointeligente\\Views\\Precificacao\\Index.cshtml",
-              "RelativeToolTip": "precificacaointeligente\\Views\\Precificacao\\Index.cshtml",
-              "ViewState": "AgIAAC8BAAAAAAAAAAAUwF4BAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-27T21:29:45.068Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Documentos\\github\\precificacaointeligente\\precificacaointeligente\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "precificacaointeligente\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\User\\OneDrive\\Documentos\\github\\precificacaointeligente\\precificacaointeligente\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "precificacaointeligente\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAAF0AAABYAAAAAAAAAA==",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAAABwAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-18T23:28:39.552Z"
+              "WhenOpened": "2025-11-18T23:28:39.552Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -224,14 +247,14 @@
               "RelativeDocumentMoniker": "precificacaointeligente\\Views\\Cramer\\Index.cshtml",
               "ToolTip": "C:\\Users\\User\\OneDrive\\Documentos\\github\\precificacaointeligente\\precificacaointeligente\\Views\\Cramer\\Index.cshtml",
               "RelativeToolTip": "precificacaointeligente\\Views\\Cramer\\Index.cshtml",
-              "ViewState": "AgIAAF8AAAAAAAAAAAAwwFYAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAMoAAAAAAAAAAAAowPoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-11-18T23:26:51.969Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "precificacaointeligente.csproj",
               "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Documentos\\github\\precificacaointeligente\\precificacaointeligente\\precificacaointeligente.csproj",
               "RelativeDocumentMoniker": "precificacaointeligente\\precificacaointeligente.csproj",
@@ -243,7 +266,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "Teste.db",
               "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Documentos\\github\\precificacaointeligente\\precificacaointeligente\\Teste.db",
               "RelativeDocumentMoniker": "precificacaointeligente\\Teste.db",
@@ -255,7 +278,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Documentos\\github\\precificacaointeligente\\precificacaointeligente\\appsettings.json",
               "RelativeDocumentMoniker": "precificacaointeligente\\appsettings.json",
@@ -267,7 +290,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Documentos\\github\\precificacaointeligente\\precificacaointeligente\\Program.cs",
               "RelativeDocumentMoniker": "precificacaointeligente\\Program.cs",
